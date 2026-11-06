@@ -7,9 +7,17 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)           # NUOVO
+find_package(sensor_msgs REQUIRED)      # NUOVO
+find_package(trajectory_msgs REQUIRED)  # NUOVO
+
+# NUOVO: nodo di teleoperazione da tastiera
+add_executable(armando_teleop src/armando_teleop.cpp)
+ament_target_dependencies(armando_teleop rclcpp sensor_msgs trajectory_msgs)
+
+install(TARGETS armando_teleop
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

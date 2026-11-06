@@ -18,5 +18,7 @@
     <!-- Camera - commentare per escludere dal modello -->
     <xacro:include filename="armando_camera.urdf.xacro"/>
 
+    <!-- Camera sul polso (eye-in-hand) -->
+    <xacro:include filename="armando_wrist_camera.urdf.xacro"/>
+
 </robot>
- 
